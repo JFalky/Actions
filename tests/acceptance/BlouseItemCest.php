@@ -21,10 +21,9 @@ class BlouseItemCest
         $I->amOnPage('');
         $I->seeElement('#homefeatured > li:nth-child(2) > div > div.right-block > h5 > a');
         $I->moveMouseOver('#homefeatured > li:nth-child(2) > div > div.right-block > h5 > a');
-        $I->waitForElementVisible('#homefeatured > li:nth-child(2) > div > div.left-block > div > a.quick-view > span');
-        $I->click('#homefeatured > li:nth-child(2) > div > div.left-block > div > a.quick-view > span');
+        $I->waitForElementVisible($QuickViewButtonCSS);
+        $I->click($QuickViewButtonXPath);
         $I->waitForElement('.fancybox-wrap');
         $I->switchToIFrame(".fancybox-iframe");
-        $I->seeElement('#product > div > div > div.pb-center-column.col-xs-12.col-sm-4');
     }
 }
